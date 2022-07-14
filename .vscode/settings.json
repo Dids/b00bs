@@ -1,3 +1,28 @@
 {
-  "editor.tabSize": 4
+    // IDE settings
+    "editor.tabSize": 4,
+
+    // TODO: Coverage settings
+    "go.coverOnSave": true,
+    "go.coverageOptions": "showUncoveredCodeOnly",
+    "go.coverOnSingleTest": true,
+    "go.coverOnSingleTestFile": true,
+    "go.coverOnTestPackage": true,
+    "go.coverShowCounts": true,
+    "go.coverageDecorator": {
+        "type": "highlight",
+        // "type": "gutter",
+        "coveredHighlightColor": "rgba(64,128,128,0.5)",
+        "uncoveredHighlightColor": "rgba(128,64,64,0.25)",
+        "coveredBorderColor": "rgba(64,128,128,0.5)",
+        "uncoveredBorderColor": "rgba(128,64,64,0.25)",
+        "coveredGutterStyle": "blockblue",
+        "uncoveredGutterStyle": "slashyellow"
+    },
+
+    // TODO: Testing settings
+    "go.testOnSave": true,
+    "go.testExplorer.enable": true,
+
+    "go.testExplorer.showOutput": false,
 }

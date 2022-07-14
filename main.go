@@ -12,13 +12,19 @@ import (
 //       https://github.com/rs/zerolog
 
 var (
-	debug bool = true // FIXME: Set to false and load from .env instead, to make development easier?
+	debug bool
 )
+
+func foo() {
+	log.Debug().Str("foo", "bar").Send()
+}
 
 func main() {
 	// TODO: Use a different library for dealing with arguments, with full help and all that
 	// TODO: Use a separate argument for pretty console output, something that makes more sense?
-	flag.BoolVar(&debug, "debug", false, "sets log level to debug")
+	if flag.Lookup("debug") == nil {
+		flag.BoolVar(&debug, "debug", false, "sets log level to debug")
+	}
 	flag.Parse()
 
 	if debug {
